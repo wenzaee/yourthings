@@ -107,4 +107,4 @@ def calculate_total_daily_average():
     return round(total_average, 2)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
