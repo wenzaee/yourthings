@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from daily_goods import daily_goods_bp
 app = Flask(__name__)
+app.register_blueprint(daily_goods_bp)
 def load_assets():
     try:
         with open(DATA_FILE, 'r') as file:
@@ -108,5 +109,5 @@ def calculate_total_daily_average():
 
 if __name__ == '__main__':
 
-    app.register_blueprint(daily_goods_bp)
-    app.run(debug=False)
+
+    app.run(debug=False,port=8111)
