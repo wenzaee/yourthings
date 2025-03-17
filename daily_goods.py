@@ -55,7 +55,15 @@ def add_daily_good():
     daily_goods.append(new_good)
     save_daily_goods(daily_goods)
     return redirect(url_for('daily_goods.daily_goods'))
-
+@daily_goods_bp.route('/decrease_quantity/<good_name>', methods=['POST'])
+def decrease_quantity(good_name):
+    daily_goods = load_daily_goods()
+    for good in daily_goods:
+        if good['name'] == good_name and good['quantity'] > 0:
+            good['quantity'] -= 1  # 数量减一
+            break
+    save_daily_goods(daily_goods)
+    return redirect(url_for('daily_goods.daily_goods'))
 # 管理日用品页面
 @daily_goods_bp.route('/manage_daily_goods')
 def manage_daily_goods_page():

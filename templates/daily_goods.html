@@ -12,6 +12,12 @@
             background-color: #f5f5f5;
             color: #333;
         }
+      .decrease-btn {
+        background-color: #f0ad4e; /* 橙色按钮 */
+        width: 150px;  /* 设置固定宽度 */
+        padding: 8px 16px; /* 增加内边距，保证文字显示完整 */
+        text-align: center; /* 文字居中 */
+    }
         .container {
             max-width: 800px;
             margin: 20px auto 80px; /* 底部预留空间给导航栏 */
@@ -98,6 +104,34 @@
         .good .actions button:hover {
             background-color: #c82333;
         }
+        .good {
+        position: relative;
+        padding: 15px 20px 15px 15px;
+    }
+
+    .good .actions {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 8px;
+    }
+
+    .good .actions .action-btn {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: opacity 0.3s;
+    }
+
+    .good .actions .action-btn:hover {
+        opacity: 0.8;
+    }
         .nav-bar {
             position: fixed;
             bottom: 0;
@@ -146,7 +180,15 @@
 </p>
                     <p><span>存放位置：</span>{{ good.storage_location }}</p>
                 </div>
-
+<div class="actions">
+            <form
+                action="{{ url_for('daily_goods.decrease_quantity', good_name=good.name) }}"
+                method="post"
+                class="action-form"
+            >
+                <button type="submit" class="action-btn decrease-btn">数量减一</button>
+            </form>
+        </div>
             </div>
             {% endfor %}
         </div>
