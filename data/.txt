@@ -1,0 +1,11 @@
+[
+    {
+        "name": "1",
+        "purchase_date": "2023-03-02",
+        "purchase_price": 23.0,
+        "quantity": 3,
+        "unit": " 250ml",
+        "expected_days": 30,
+        "storage_location": "2"
+    }
+]

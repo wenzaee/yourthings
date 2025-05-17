@@ -1,0 +1,12 @@
+[
+    {
+        "name": "1",
+        "purchase_date": "2322-02-03",
+        "purchase_price": 3.0,
+        "quantity": 3,
+        "unit": "3",
+        "expected_days": 3,
+        "storage_location": "3",
+        "input_date": "2025-05-17T21:01:42.190351"
+    }
+]

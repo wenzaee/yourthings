@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import json
 from datetime import datetime
-
+from daily_goods import daily_goods_bp
 app = Flask(__name__)
 def load_assets():
     try:
@@ -107,4 +107,6 @@ def calculate_total_daily_average():
     return round(total_average, 2)
 
 if __name__ == '__main__':
+
+    app.register_blueprint(daily_goods_bp)
     app.run(debug=False)
